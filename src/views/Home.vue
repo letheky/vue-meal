@@ -12,11 +12,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
-import { useStore } from 'vuex';
+import {  onMounted, ref } from 'vue';
 import http from '../axiosClient';
 
-const store = useStore();
 const ingredients = ref([])
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
