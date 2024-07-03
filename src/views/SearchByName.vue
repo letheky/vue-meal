@@ -28,7 +28,10 @@
         </svg>
         <span class="sr-only">Loading...</span>
     </div>
-    <div v-else-if="meals.length > 0" class="p-6 grid grid-cols-3 gap-3">
+    <div
+        v-else-if="meals.length > 0"
+        class="p-6 grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3"
+    >
         <section
             class="flex"
             v-for="meal in meals"

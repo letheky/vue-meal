@@ -1,40 +1,42 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
+const baseUrl = '/vue-meal/'
+
 const routes: RouteRecordRaw[] = [
     {
-        path: '/',
+        path: baseUrl,
         component: () => import('../components/DefaultLayout.vue'),
         children: [
             {
-                path: '/',
+                path: baseUrl,
                 name: 'home',
                 component: () => import('../views/Home.vue')
             },
             {
-                path: '/by-letter/:letter?',
+                path: `${baseUrl}/by-letter/:letter?`,
                 name: 'byLetter',
                 component: () => import('../views/SearchByLetter.vue')
             },
             {
-                path: '/by-name/:name?',
+                path: `${baseUrl}/by-name/:name?`,
                 name: 'byName',
                 component: () => import('../views/SearchByName.vue')
             },
             {
-                path: '/by-ingredient/:ingredient?',
+                path: `${baseUrl}/by-ingredient/:ingredient?`,
                 name: 'byIngredient',
                 component: () => import('../views/SearchByIngredient.vue')
             },
         ]
     },
     {
-        path: '/:pathMatch(.*)*',
+        path: `${baseUrl}/:pathMatch(.*)*`,
         name: '404',
         component: () => import('../views/404.vue')
     },
     {
-        path:'/auth',
-        name:'auth',
+        path: `${baseUrl}/auth`,
+        name: 'auth',
         component: () => import('../views/Auth.vue')
     }
 
